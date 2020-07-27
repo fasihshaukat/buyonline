@@ -1,4 +1,19 @@
 @inject('request', 'Illuminate\Http\Request')
+@push('CSS')
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+    <style>
+
+
+    </style>
+
+
+
+@endpush
+@push('Js')
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+@endpush
 <!-- Left side column. contains the sidebar -->
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -12,7 +27,7 @@
                 </a>
             </li>
 
-            
+
             @can('event_access')
             <li class="{{ $request->segment(2) == 'events' ? 'active' : '' }}">
                 <a href="{{ route('admin.events.index') }}">
@@ -21,7 +36,7 @@
                 </a>
             </li>
             @endcan
-            
+
             @can('ticket_access')
             <li class="{{ $request->segment(2) == 'tickets' ? 'active' : '' }}">
                 <a href="{{ route('admin.tickets.index') }}">
@@ -30,7 +45,7 @@
                 </a>
             </li>
             @endcan
-            
+
             @can('payment_access')
             <li class="{{ $request->segment(2) == 'payments' ? 'active' : '' }}">
                 <a href="{{ route('admin.payments.index') }}">
@@ -39,7 +54,7 @@
                 </a>
             </li>
             @endcan
-            
+
             @can('user_management_access')
             <li class="treeview">
                 <a href="#">
@@ -50,7 +65,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                
+
                 @can('role_access')
                 <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
                         <a href="{{ route('admin.roles.index') }}">
@@ -75,9 +90,9 @@
             </li>
             @endcan
 
-            
 
-            
+
+
 
             <li class="{{ $request->segment(1) == 'change_password' ? 'active' : '' }}">
                 <a href="{{ route('auth.change_password') }}">
@@ -98,3 +113,4 @@
 {!! Form::open(['route' => 'auth.logout', 'style' => 'display:none;', 'id' => 'logout']) !!}
 <button type="submit">@lang('quickadmin.logout')</button>
 {!! Form::close() !!}
+

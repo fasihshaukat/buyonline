@@ -1,5 +1,5 @@
 @extends('layouts.guest')
-
+@section('title', 'Events')
 @section('content')
     @include('partials.guest.header')
 
@@ -104,20 +104,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="panel panel-default">
+                    <div class="panel panel-default" style="margin-top: 60px; ">
                         <div class="panel-body">
-                            <h2>{{ $event->title }}</h2>
+                            <h2 >{{ $event->title }}</h2>
                             <div>{!! $event->description !!}</div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="panel panel-default">
+                    <div class="panel panel-default"style="margin-top: 60px;" >
                         <div class="panel-body">
-                            <div class="event-meta">
-                                <div class="datetime">Start time: <span class="label label-default">{{ $event->start_time }}</span></div>
-                                <div class="venue">Venue: <span class="label label-info">{{ $event->venue }}</span></div>
+                            <div class="event-meta" >
+                                <div class="datetime text-black">Start time : <span class="label label-success" >{{ $event->start_time }}</span></div>
+                                <div class="venue text-black">Venue : <span class="label label-info">{{ $event->venue }}</span></div>
                             </div>
+                            <button type="button" class="btn btn-success">Buy</button>
+                            <br><br>
 
                             @if(!$tickets->isEmpty())
                             <div class="tickets">
@@ -189,4 +191,5 @@
             </div>
         </div>
     </section>
+
 @endsection

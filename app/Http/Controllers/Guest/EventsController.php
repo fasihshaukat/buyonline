@@ -20,7 +20,8 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $events = Event::all();
+
+        $events = Event::orderBy('id','Desc')->get();
 
         return view('guest.home', compact('events'));
     }
@@ -33,6 +34,7 @@ class EventsController extends Controller
      */
     public function show($id)
     {
+
         $now = Carbon::now()->toDateString();
         // don't display tickets which are not available
         $match = [

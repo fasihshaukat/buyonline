@@ -11,7 +11,7 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-6">
-                    <table class="table table-bordered table-striped">
+                    <table class="table table-bordered table-striped ">
                         <tr>
                             <th>@lang('quickadmin.events.fields.title')</th>
                             <td>{{ $event->title }}</td>

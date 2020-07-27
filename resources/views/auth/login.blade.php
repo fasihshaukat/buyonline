@@ -1,11 +1,23 @@
 @extends('layouts.auth')
 
 @section('content')
+
+    <style type="text/css">
+
+
+        body {
+            background: url({{('images/background.png')}}) repeat;
+            background-color: #391054;
+        }
+
+    </style>
+
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">{{ ucfirst(config('app.name')) }} Login</div>
+            <div class="panel panel-default" >
+                <div class="panel-heading">Buy Online Login</div>
                 <div class="panel-body">
+
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             <strong>Whoops!</strong> There were problems with input:
@@ -67,7 +79,7 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit"
                                         class="btn btn-primary"
-                                        style="margin-right: 15px;">
+                                        style="margin-right: 15px; background-color: #391054;">
                                     Login
                                 </button>
                             </div>

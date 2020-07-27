@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Event;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use App\Payment;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -25,6 +27,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $data['total_events']=Event::all()->count();
+        $data['total_Revenue']=Payment::all('amount')->count();
+        return view('admin.dashboard')->with(['Events'=> $data])->with(['Revenue'=>$data]);
     }
 }
