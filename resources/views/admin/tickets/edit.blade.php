@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('quickadmin.tickets.title')</h3>
+    <h3 class="page-title" style="margin-top: 40px;">@lang('quickadmin.tickets.title')</h3>
     
     {!! Form::model($ticket, ['method' => 'PUT', 'route' => ['admin.tickets.update', $ticket->id]]) !!}
 

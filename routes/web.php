@@ -1,8 +1,12 @@
 <?php
 // Route::get('/', function () { return redirect('/admin/home'); });
-
+Route::get('/home', 'SendEmailController@index');
+Route::post('/sendemail/send', 'SendEmailController@send');
 $this->get('/', 'Guest\EventsController@index')->name('guest.home');
 
+Route::get('/profile', function () {
+    return view('profile');
+});
 //$this->get('events', 'Guest\EventsController@index')->name('events.index');
 //$this->get('events/{event}', 'Guest\EventsController@show')->name('events.show');
 $this->resource('events', 'Guest\EventsController');

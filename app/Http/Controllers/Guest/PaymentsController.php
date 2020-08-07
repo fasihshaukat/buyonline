@@ -105,7 +105,7 @@ class PaymentsController extends Controller
         try {
             $charge = Charge::create(array(
                 "amount" => $total * 100,
-                "currency" => "eur",
+                "currency" => "pkr",
                 "description" => "Ticket charge", // needs better description
                 "source" => $token
             ));

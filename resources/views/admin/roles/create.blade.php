@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('quickadmin.roles.title')</h3>
+    <h3 class="page-title" style="margin-top: 40px;">@lang('quickadmin.roles.title')</h3>
     {!! Form::open(['method' => 'POST', 'route' => ['admin.roles.store']]) !!}
 
     <div class="panel panel-default">

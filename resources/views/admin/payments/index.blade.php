@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('quickadmin.payments.title')</h3>
+    <h3 class="page-title" style="margin-top: 40px;">@lang('quickadmin.payments.title')</h3>
     @can('payment_create')
     <p>
         <a href="{{ route('admin.payments.create') }}" class="btn btn-success">@lang('quickadmin.qa_add_new')</a>

@@ -118,13 +118,14 @@
                                 <div class="datetime text-black">Start time : <span class="label label-success" >{{ $event->start_time }}</span></div>
                                 <div class="venue text-black">Venue : <span class="label label-info">{{ $event->venue }}</span></div>
                             </div>
-                            <button type="button" class="btn btn-success">Buy</button>
-                            <br><br>
+
+
 
                             @if(!$tickets->isEmpty())
                             <div class="tickets">
                                 <h3>Buy Tickets</h3>
                                 <form action="{{ route('guest.payment') }}" method="POST" id="payment-form">
+                                    <button type="submit" class="btn btn-success">Buy</button>
                                     {{ csrf_field() }}
                                     <table class="table table-tickets">
                                         <thead>
@@ -146,9 +147,9 @@
                                                                 value="0"
                                                                 data-ticket="{{ $ticket->id }}">
                                                     </td>
-                                                    <td><strong>{{ $ticket->price }}&nbsp;€</strong></td>
+                                                    <td><strong>{{ $ticket->price }}&nbsp;.Rs</strong></td>
                                                     <td>
-                                                        <strong class="subtotal">0.00</strong><strong>&nbsp;€</strong>
+                                                        <strong class="subtotal">0.00</strong><strong>&nbsp;.Rs</strong>
                                                         <input
                                                                 class="rsubtotal"
                                                                 type="hidden" value="0.00"
@@ -158,7 +159,7 @@
                                             @endforeach
                                                 <tr class="last">
                                                     <td colspan="3"></td>
-                                                    <td><strong class="total">0.00</strong><strong>&nbsp;€</strong><input type="hidden" name="total" class="rtotal" value="0.00"></td>
+                                                    <td><strong class="total">0.00</strong><strong>&nbsp;.Rs</strong><input type="hidden" name="total" class="rtotal" value="0.00"></td>
                                                 </tr>
                                         </tbody>
                                     </table>

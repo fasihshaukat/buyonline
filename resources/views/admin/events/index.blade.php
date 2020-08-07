@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('quickadmin.events.title')</h3>
+    <h3 class="page-title" style="margin-top: 40px;">@lang('quickadmin.events.title')</h3>
     @can('event_create')
     <p>
         <a href="{{ route('admin.events.create') }}" class="btn btn-success">@lang('quickadmin.qa_add_new')</a>

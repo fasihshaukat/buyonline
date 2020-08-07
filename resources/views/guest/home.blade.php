@@ -5,27 +5,15 @@
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <img class="d-block w-100" src="images/ff.jpg" alt="First slide" style="height: 480px;">
 
-    <div class="jumbotron jumbotron-fluid "id="about" style="background-color:#f2f6f2 ">
-        <div class="container">
-            <h3 ><b>WHAT IS BUYONLINE.COM?</b></h3>
-            <p  style="font-size:17px;">We , Buy Online , are a team to provide you with your One Stop Entertainment Solution - With the passion of giving the best , deriving innovation for your ease , inculcating the new trends to let you stay connected with everything happening around..</p>
 
-            <h3 ><b>WHAT WE DO?</b></h3>
-            <p style="font-size:17px;">Online portal that has made buying tickets online easy with simple steps without any unnecessary frills:</p>
-            <ul>
-                <li>Select an event in your city</li>
-                <li>Buy Your Ticket Online</li>
-                <li>Book Your Tickets</li>
-                <li>Pay Online</li>
+       <img class="d-block w-100" src="images/cover9.jpg" alt="First slide" style="height: 480px;">
 
-            </ul>
 
-        </div>
-    </div>
 
-    <div class="jumbotron jumbotron-fluid "id="about" style="background-color: white">
+
+
+    <div class="jumbotron jumbotron-fluid "id="about" style="background-color: white;  ">
         <div class="container">
             <h3 ><b>WHAT IS BUYONLINE.COM?</b></h3>
             <p  style="font-size:17px;">We , Buy Online , are a team to provide you with your One Stop Entertainment Solution - With the passion of giving the best , deriving innovation for your ease , inculcating the new trends to let you stay connected with everything happening around..</p>
@@ -67,11 +55,137 @@
         </div>
     </section>
 
-    <div class="jumbotron jumbotron-fluid "id="about" style="background-color: #F5F8FA">
+    <div class="jumbotron jumbotron-fluid "id="about" style=" background-color: #F5F8FA">
     </div>
 
-    <img class="d-block w-100" src="images/covers.jpg" alt="First slide" style="height: 440px;">
+    <div class="jumbotron jumbotron-fluid "id="about" style="  background: url({{('images/background.png')}}) repeat;
+            background-color: #1f0e34;">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-5">
+            <h3  style="color: white;">Discover Digital Events</h3>
+<p class="lead" style="color: white;font-size: 16px;">We bring you online experiences to make sure you've got an exciting plan every day.
+    Bake a cake, get in some yoga, and stay entertained with digital events on the Paytm Insider app.</p><span></span>
 
+            </div>
+                <div class="col-lg-7 " >
+                <div class="badges" style="margin-top: 70px;">
+                    <a class="badge-link" href="#"><img src="images/googleplay.svg" alt="" style="width: 150px; height: auto;  "></a>
+                    <a class="badge-link" href="#"><img src="images/app.svg" alt="" style=""></a>
+                </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+    <div class="jumbotron jumbotron-fluid "  style="background-color: white">
+    <div class="container text-center">
+        <h3>Give your recommendations and feedback to us !</h3>
+        <!-- Trigger the modal with a button -->
+        <br>
+        <button type="button" class="btn  btn-lg " style="border-radius: 25px;  width: 180px; margin-left: 20px; background-color: #391054 ; color: white;"  data-toggle="modal" data-target="#myModal">Give Feedback</button>
+
+        <!-- Modal -->
+    </div>
+    </div>
+        <div class="container" id="feedback" >
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #391054 ">
+                        <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+                        <h4 class="modal-title" style="color: white">Feedback</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h4 align="center">Please tell us what do you think,any kind of feedback is highly appreciated.</h4><br />
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        @if ($message = Session::get('success'))
+                            <div class="alert alert-success alert-block">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                <strong>{{ $message }}</strong>
+                            </div>
+                        @endif
+                        <form method="post" action="{{url('sendemail/send')}}">
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                                <label>Enter Your Name</label>
+                                <input type="text" name="name" class="form-control" value="" />
+                            </div>
+                            <div class="form-group">
+                                <label>Enter Your Email</label>
+                                <input type="text" name="email" class="form-control" value="" />
+                            </div>
+                            <div class="form-group">
+                                <label>Enter Your Message</label>
+                                <textarea name="message" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="send" class="btn btn-success" value="Send" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<!-- feedback portion
+
+    <div class="container box">
+        <h3 align="center">Give Feedback To Us !</h3><br />
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>{{ $message }}</strong>
+            </div>
+        @endif
+        <form method="post" action="{{url('sendemail/send')}}">
+            {{ csrf_field() }}
+            <div class="form-group">
+                <label>Enter Your Name</label>
+                <input type="text" name="name" class="form-control" value="" />
+            </div>
+            <div class="form-group">
+                <label>Enter Your Email</label>
+                <input type="text" name="email" class="form-control" value="" />
+            </div>
+            <div class="form-group">
+                <label>Enter Your Message</label>
+                <textarea name="message" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" name="send" class="btn btn-success" value="Send" />
+            </div>
+        </form>
+
+    </div> -->
+
+    <!-- footer -->
     <section class="col-xs-12 contactWidget">
 
     </section>
@@ -123,6 +237,7 @@
                 </section>
             </div>
             <section  >
+
                 <footer class="page-footer font-small cyan darken-3 " style="background-color: #1F262D; width: 100%;" id="contact" >
 
                     <div class="container-fluid">
